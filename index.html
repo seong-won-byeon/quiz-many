@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>퀴즈 리워드 페이지</title>
+  <link rel="stylesheet" href="./assets/css/index.css"/>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./assets/js/index.js" defer></script>
+</head>
+<body>
+    <header>
+      <button class="back-button" aria-label="뒤로가기">
+          <img src="./assets/img/ico-back.svg" alt="뒤로가기"/>
+      </button>
+      <button class="help-button" aria-label="도움말">
+          <img src="./assets/img/ico-contact.svg" alt="도움말" />
+      </button>
+    </header>
+
+    <main>
+      <div class="p-20">
+        <section class="quiz-progress">
+          <div class="col-top">
+              <h2>정답 맞출 때마다 리워드 UP!</h2>
+              <div class="point">
+                <img src="./assets/img/point.png" alt class="po-img">
+                <p class="po-txt">10</p>
+              </div>
+          </div>
+
+          <div class="step-wrap">
+            <ul class="step-list">
+              <li class="step done">
+                <div>
+                  <span class="num">2</span>
+                  <span class="check-icon"></span>
+                </div>
+              </li>
+              <li class="step current">
+                <div>
+                  <span class="num">4</span>
+                </div>
+              </li>
+              <li class="step"><div><span class="num">6</span></div></li>
+              <li class="step"><div><span class="num">8</span></div></li>
+              <li class="step"><div><span class="num">10</span></div></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="quiz-pane">
+          <h3>
+            <span class="q-num">Q1</span>
+            <span class="q-title">
+              문제를 입력해주세요. 최대 두줄까지 작성 가능합니다. 최대 두줄까지 최대 두줄까지 최대 두줄까지
+            </span>
+          </h3>
+          <ul class="instructions">
+            <li>1.&nbsp;미션 스텝을 간단히 요약해주세요.</li>
+            <li>2.&nbsp;미션 스텝을 간단히 요약해주세요.미션 스텝을 간단히 요약해주세요.미션 스텝을 간단히 요약해주세요.</li>
+          </ul>
+          <div class="info-item keyword">
+            <img src="./assets/img/keyword.png" alt aria-hidden="true" />
+            <dl>
+              <dt>키워드</dt>
+              <dd>교대맛집 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 </dd>
+            </dl>
+          </div>
+          <div class="info-item place">
+            <img src="./assets/img/place.png" alt aria-hidden="true" />
+            <dl>
+              <dt>플레이스명</dt>
+              <dd>자X랩 서X점</dd>
+            </dl>
+          </div>
+          <div class="info-item store">
+            <img src="./assets/img/store.png" alt aria-hidden="true" />
+            <dl>
+              <dt>스토어명</dt>
+              <dd>교대맛집 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 </dd>
+            </dl>
+          </div>
+          <div class="info-item product">
+            <img src="./assets/img/product.png" alt aria-hidden="true" />
+            <dl>
+              <dt>상품명</dt>
+              <dd>자X랩 서X점</dd>
+            </dl>
+          </div>
+          <div class="info-item price">
+            <img src="./assets/img/price.png" alt aria-hidden="true" />
+            <dl>
+              <dt>상품금액</dt>
+              <dd>10,000원</dd>
+            </dl>
+          </div>
+          <div class="action-buttons">
+            <button class="copy-button">키워드 복사</button>
+            <button class="search-button">검색하러가기</button>
+          </div>
+        </section>
+      </div>
+
+      <aside class="guide-box">
+        <div class="p-20">
+          <h4>퀴즈가 처음이라면?</h4>
+          <p>문제별 가이드에 따라 차근차근 진행해 보세요!</p>
+        </div>
+        <nav class="question-tabs">
+          <button class="active" data-tab="1">문제1</button>
+          <button data-tab="2">문제2</button>
+          <button data-tab="3">문제3</button>
+          <button data-tab="4">문제4</button>
+          <button data-tab="5">문제5</button>
+        </nav>
+        <div class="guide-content-wrap">
+          <div class="guide-content active" data-tab="1">
+            <img src="./assets/img/guide-image.png" alt="상품품번 리워드 획득">
+          </div>
+          <div class="guide-content" data-tab="2">
+            <img src="./assets/img/guide-image.png" alt="상품품번 리워드 획득">
+          </div>
+        </div>
+      </aside>
+    </main>
+
+
+    <!-- 정답입력 -->
+    <div class="answer-bar">
+      <div class="answer-field">
+        <input type="text" class="answer-input" placeholder="1번째 문제의 정답을 입력해주세요." />
+        <button class="answer-submit">확인</button>
+      </div>
+    </div>
+
+</body>
+</html>
