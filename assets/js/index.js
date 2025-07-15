@@ -81,3 +81,29 @@ input.addEventListener('input', () => {
   const hasValue = input.value.trim().length > 0;
   button.disabled = !hasValue;
 });
+
+
+
+
+
+
+
+// 도움말 클릭시
+document.addEventListener("DOMContentLoaded", function () {
+  const helpButton = document.querySelector(".help-button");
+  const dimmedArea = document.getElementById("dimmedArea");
+  const cancelButton = document.querySelector(".btn-go");
+
+  // 팝업 초기 상태 숨기기
+  dimmedArea.style.display = "none";
+
+  // 도움말 버튼 클릭 시 팝업 보이기
+  helpButton.addEventListener("click", function () {
+    dimmedArea.style.display = "flex";
+  });
+
+  // 취소 버튼 클릭 시 팝업 숨기기
+  cancelButton.addEventListener("click", function () {
+    dimmedArea.style.display = "none";
+  });
+});
