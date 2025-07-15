@@ -22,3 +22,62 @@ $(function () {
       }
     });
   });
+
+
+
+    // Figma에서 설정한 1ms delay 반영
+    // 토스트 보여주기 함수
+    function showToast() {
+      const toast = document.getElementById('toast');
+    
+      setTimeout(() => {
+        toast.classList.add('show');
+        toast.classList.remove('hide');
+      }, 1); // ✅ 1ms 후 등장 (Delay: 1ms)
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+        toast.classList.add('hide');
+      }, 2000); // ✅ 2초 뒤 사라짐 (별도 설정 가능)
+    }
+    
+    // 실행
+    showToast();
+
+
+
+
+
+      // 힌트보기 플로팅 클릭시
+      const toggleBtn = document.getElementById('toggleBtn');
+      const toggleIcon = document.getElementById('toggleIcon');
+      const catImg = document.getElementById('catImg');
+      const hintBubble = document.getElementById('hintBubbleInner');
+      const hintText = hintBubble.querySelector('p');
+      const bubbleCard = document.getElementById('bubbleCard');
+      
+      let isOpen = false;
+      
+      toggleBtn.addEventListener('click', () => {
+        isOpen = !isOpen;
+      
+        toggleIcon.classList.toggle('rotated');
+        catImg.classList.toggle('down');
+        hintBubble.classList.toggle('expanded');
+        hintText.classList.toggle('hidden');
+        bubbleCard.classList.toggle('show');
+      });
+      
+      
+      
+
+      
+      
+      // 정답입력 button enabled
+      const input = document.querySelector('.answer-input');
+const button = document.querySelector('.answer-submit');
+
+input.addEventListener('input', () => {
+  const hasValue = input.value.trim().length > 0;
+  button.disabled = !hasValue;
+});
