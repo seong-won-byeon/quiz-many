@@ -268,7 +268,7 @@ header button img {
   .quiz-progress {
     position: relative;
     background: #fff;
-    border-radius: 18px;
+    border-radius: 24px;
     padding: 18px 20px;
     text-align: center;
   }
@@ -284,12 +284,14 @@ header button img {
     font-size: 18px;
     line-height: 1.5;
     letter-spacing: -0.36px;
+    width: 100%;
   }
   .point {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4px;
+    flex-shrink: 0;
   }
   .point .po-img {
     width: 18px;
@@ -420,7 +422,7 @@ header button img {
     background: #fff;
     padding: 18px 20px;
     margin-top: 12px;
-    border-radius: 18px;
+    border-radius: 24px;
   }
   .quiz-pane .q-num {
     color: #1F65FF;
@@ -456,7 +458,7 @@ header button img {
     background: #EFEFF1;
   }
   .instructions li {
-    color: #62626F;
+    color: #757585;
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: -0.28px;
@@ -465,7 +467,7 @@ header button img {
   .info-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
   }
   .info-item + .info-item {
     margin-top: 16px;
@@ -491,6 +493,7 @@ header button img {
     font-weight: var(--font-semibold);
     line-height: 1.5;
     letter-spacing: -0.32px;
+    color: #4F4F5A;
   }
   .info-item.place dd,
   .info-item.price dd {
@@ -502,9 +505,6 @@ header button img {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    font-size: 14px;
-    font-weight: var(--font-semibold);
-    line-height: 1.5;
   }
   .action-buttons button {
     height: 45px;
@@ -556,7 +556,7 @@ header button img {
     align-items: center;
     margin-top: 28px;
     border-bottom: 1px solid #EFEFF1;
-    padding: 0 18px;
+    /* padding: 0 18px; */
 }
   .question-tabs button {
     color: #D1D1D6;
@@ -692,30 +692,23 @@ header button img {
     padding: 0 16px;
     min-width: 215px;
     white-space: nowrap;
-  
     /* ✅ 공통 transition */
     transition: all 150ms linear; /* ✅ Smart animate + Linear + Duration 150ms */
   }
-  
   .toast.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0); 
     /* 올라오면서 등장 */
   }
-  
   .toast.hide {
     opacity: 0;
     transform: translateX(-50%) translateY(0); 
     /* ❗위치 고정해서 사라지기 */
   }
-  
-  
   .toast img {
     width: 24px;
     height: 24px;
   }
-  
-
   
 
 
@@ -784,7 +777,7 @@ header button img {
     margin-bottom: 10px;
   }
   .baseDimmed .pop-area form p:nth-of-type(2) {
-    margin-top: 20px;
+    margin-top: 30px;
   }
   .baseDimmed .pop-area input,
   .baseDimmed .pop-area textarea {
