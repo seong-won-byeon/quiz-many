@@ -402,7 +402,6 @@ header button img {
 
 .step > img {
   width: 54px;
-  border: 1px solid #000;
 }
   
 
@@ -817,6 +816,7 @@ header button img {
 
 
   /* 힌트보기 플로팅 */
+  /* 말풍선 */
   .floating-container {
     position: fixed;
     bottom: 134px;
@@ -867,6 +867,11 @@ header button img {
   }
   
   /* 말풍선 */
+  .hint-bubble-wrap {
+    padding-bottom: 5px;
+    /* padding-bottom: 8px; */
+    margin-bottom: 8px;
+  }
   .hint-bubble {
     position: relative;
     background: #fff;
@@ -878,7 +883,6 @@ header button img {
     transition: max-height 0.4s ease;
     max-height: 48px; /* 텍스트 줄일 때 높이 제한 */
   }
-  
   .hint-bubble.expanded {
     max-height: 200px; /* 말풍선 확장 시 높이 증가 */
   }
@@ -893,7 +897,8 @@ header button img {
     transition: opacity 0.2s ease;
   }
   .hint-bubble p.hidden {
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
   }
   
   /* 꼬리 */
@@ -901,7 +906,7 @@ header button img {
     content: '';
     background: url(../img/fra-hint.png) no-repeat center / 100%;
     position: absolute;
-    bottom: -4px;
+    bottom: -5px;
     right: 18px;
     width: 13px;
     height: 13px;
@@ -915,13 +920,12 @@ header button img {
     transition: opacity 0.3s ease, height 0.3s ease;
   }
   .bubble-card.show {
-    height: 100px;
+    height: 90px;
     opacity: 1;
-    padding-top: 10px;
+    /* padding-top: 10px; */
   }
   .bubble-card .thumb-area {
     padding: 5px;
-    border: 1px solid #000;
   }
   .bubble-card img {
     width: 80px;
@@ -929,4 +933,6 @@ header button img {
     object-fit: cover;
     border-radius: 8px;
   }
+
+
   
