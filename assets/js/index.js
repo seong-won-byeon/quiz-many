@@ -75,12 +75,12 @@ $(function () {
       
       // 정답입력 button enabled
       const input = document.querySelector('.answer-input');
-const button = document.querySelector('.answer-submit');
+      const button = document.querySelector('.answer-submit');
 
-input.addEventListener('input', () => {
-  const hasValue = input.value.trim().length > 0;
-  button.disabled = !hasValue;
-});
+        input.addEventListener('input', () => {
+          const hasValue = input.value.trim().length > 0;
+        button.disabled = !hasValue;
+    });
 
 
 
