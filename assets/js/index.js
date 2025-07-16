@@ -107,3 +107,22 @@ document.addEventListener("DOMContentLoaded", function () {
     dimmedArea.style.display = "none";
   });
 });
+
+
+
+
+
+
+
+// 더블탭 줌 방지 JS 코드 (iOS 전용)
+let lastTouchEnd = 0;
+  document.addEventListener('touchend', function (event) {
+    const now = new Date().getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault(); // 더블탭 줌 방지
+    }
+    lastTouchEnd = now;
+  }, false);
+
+
+
