@@ -48,39 +48,60 @@ $(function () {
 
 
 
-      // 힌트보기 플로팅 클릭시
-      const toggleBtn = document.getElementById('toggleBtn');
-const toggleIcon = document.getElementById('toggleIcon');
-const hintBubble = document.getElementById('hintBubbleInner');
-const hintText = hintBubble.querySelector('p');
-const bubbleCard = document.getElementById('bubbleCard');
+    // 힌트보기 플로팅 클릭시
+    const toggleBtn = document.getElementById('toggleBtn');
+    const toggleIcon = document.getElementById('toggleIcon');
+    const hintBubble = document.getElementById('hintBubbleInner');
+    const hintText = document.getElementById('hintText'); // <p id="hintText">로 되어 있어야 함
+    const bubbleCard = document.getElementById('bubbleCard');
 
-let isOpen = false;
+    let isOpen = false;
 
-toggleBtn.addEventListener('click', () => {
-  isOpen = !isOpen;
-  toggleIcon.classList.toggle('rotated');
+    toggleBtn.addEventListener('click', () => {
+      isOpen = !isOpen;
+    
+      // 🔄 아이콘 회전 애니메이션 초기화 후 재적용
+      toggleIcon.classList.remove('rotate-to-x', 'rotate-to-plus');
+      void toggleIcon.offsetWidth;
+      toggleIcon.classList.add(isOpen ? 'rotate-to-x' : 'rotate-to-plus');
+    
+      // 💬 말풍선 반동 애니메이션 초기화
+      hintBubble.classList.remove('bounce-expand', 'bounce-shrink');
+    
+      if (isOpen) {
+        // ✅ 텍스트 투명하게 사라짐 (opacity: 0)
+        hintText.classList.add('faded');
+      
+        // ✅ 말풍선 커지면서 이미지 등장
+        hintBubble.classList.add('expanded', 'bounce-expand');
+        bubbleCard.classList.add('show');
+      
+      } else {
+        // ✅ 이미지 사라짐
+        bubbleCard.classList.remove('show');
+      
+        // ✅ 말풍선 작아지며 반동
+        setTimeout(() => {
+          hintBubble.classList.remove('expanded');
+          hintBubble.classList.add('bounce-shrink');
+        }, 200);
+      
+        // ✅ 텍스트 다시 나타남 (opacity: 1)
+        setTimeout(() => {
+          hintText.classList.remove('faded');
+        }, 200); // 이미지가 사라질 타이밍에 맞춤
+      }
+    });
 
-  if (isOpen) {
-    // 텍스트 숨기기
-    hintText.classList.add('hidden');
+      
 
-    // 약간의 지연 후 말풍선 확장 및 이미지 노출
-    setTimeout(() => {
-      hintBubble.classList.add('expanded');
-      bubbleCard.classList.add('show');
-    }, 30);
-  } else {
-    // 이미지 숨기기
-    bubbleCard.classList.remove('show');
-    hintBubble.classList.remove('expanded');
 
-    // 말풍선이 줄어든 후 텍스트 다시 표시
-    setTimeout(() => {
-      hintText.classList.remove('hidden');
-    }, 200);
-  }
-});
+
+      
+      
+
+
+
 
       
       
