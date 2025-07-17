@@ -50,23 +50,38 @@ $(function () {
 
       // 힌트보기 플로팅 클릭시
       const toggleBtn = document.getElementById('toggleBtn');
-      const toggleIcon = document.getElementById('toggleIcon');
-      const catImg = document.getElementById('catImg');
-      const hintBubble = document.getElementById('hintBubbleInner');
-      const hintText = hintBubble.querySelector('p');
-      const bubbleCard = document.getElementById('bubbleCard');
-      
-      let isOpen = false;
-      
-      toggleBtn.addEventListener('click', () => {
-        isOpen = !isOpen;
-      
-        toggleIcon.classList.toggle('rotated');
-        catImg.classList.toggle('down');
-        hintBubble.classList.toggle('expanded');
-        hintText.classList.toggle('hidden');
-        bubbleCard.classList.toggle('show');
-      });
+const toggleIcon = document.getElementById('toggleIcon');
+const hintBubble = document.getElementById('hintBubbleInner');
+const hintText = hintBubble.querySelector('p');
+const bubbleCard = document.getElementById('bubbleCard');
+
+let isOpen = false;
+
+toggleBtn.addEventListener('click', () => {
+  isOpen = !isOpen;
+  toggleIcon.classList.toggle('rotated');
+
+  if (isOpen) {
+    // 텍스트 숨기기
+    hintText.classList.add('hidden');
+
+    // 약간의 지연 후 말풍선 확장 및 이미지 노출
+    setTimeout(() => {
+      hintBubble.classList.add('expanded');
+      bubbleCard.classList.add('show');
+    }, 30);
+  } else {
+    // 이미지 숨기기
+    bubbleCard.classList.remove('show');
+    hintBubble.classList.remove('expanded');
+
+    // 말풍선이 줄어든 후 텍스트 다시 표시
+    setTimeout(() => {
+      hintText.classList.remove('hidden');
+    }, 200);
+  }
+});
+
       
       
       
@@ -75,12 +90,12 @@ $(function () {
       
       // 정답입력 button enabled
       const input = document.querySelector('.answer-input');
-      const button = document.querySelector('.answer-submit');
+const button = document.querySelector('.answer-submit');
 
-        input.addEventListener('input', () => {
-          const hasValue = input.value.trim().length > 0;
-        button.disabled = !hasValue;
-    });
+input.addEventListener('input', () => {
+  const hasValue = input.value.trim().length > 0;
+  button.disabled = !hasValue;
+});
 
 
 
@@ -113,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 // 더블탭 줌 방지 JS 코드 (iOS 전용)
 let lastTouchEnd = 0;
   document.addEventListener('touchend', function (event) {
@@ -123,6 +137,3 @@ let lastTouchEnd = 0;
     }
     lastTouchEnd = now;
   }, false);
-
-
-
