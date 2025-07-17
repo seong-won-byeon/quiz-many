@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no;" />
-  <title>다중입력</title>
+  <title>퀴즈 리워드 페이지</title>
   <link rel="stylesheet" href="./assets/css/index.css"/>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="./assets/js/index.js" defer></script>
@@ -25,7 +25,6 @@
       <img src="./assets/img/ico-error.svg" alt>
       정답을 다시 확인해주세요
     </div> -->
-
 
     <!-- 문의하기 팝업창-->
     <div id="dimmedArea">
@@ -55,16 +54,13 @@
     </div>
 
 
-
     <div class="floating-container">
       <!-- 위: 말풍선 -->
       <div class="hint-bubble-wrap" id="hintBubble">
         <div class="hint-bubble" id="hintBubbleInner">
           <p>힌트 보기💡</p>
           <div class="bubble-card" id="bubbleCard">
-            <div class="thumb-area">
-              <img src="./assets/img/hintSmple.png" alt="힌트 이미지" />
-            </div>
+            <img src="./assets/img/hintSmple.png" alt="힌트 이미지" />
           </div>
         </div>
       </div>
@@ -74,15 +70,10 @@
         <span class="toggle-icon" id="toggleIcon">
           <img src="./assets/img/ico-hint.svg" alt>
         </span>
-        <img src="./assets/img/hint-01.png" alt="고양이" class="cat-img" id="catImg" />
       </button>
     </div>
   
-    
   
-  
-
-
     <header>
       <button class="back-button" aria-label="뒤로가기">
           <img src="./assets/img/ico-back.svg" alt="뒤로가기"/>
@@ -92,35 +83,52 @@
       </button>
     </header>
 
+
     <main>
       <div class="p-20">
         <section class="quiz-progress">
           <div class="col-top">
-              <h2>정답을 모두 맞추면 리워드 지급!</h2>
-              <div class="point">
-                <img src="./assets/img/point.png" alt class="po-img">
-                <p class="po-txt">10</p>
+            <h2>정답을 모두 맞추면 리워드 지급!</h2>
+            <div class="point">
+              <img src="./assets/img/point.png" alt class="po-img">
+              <p class="po-txt">10</p>
+            </div>
+          </div>
+
+          <div class="step-wrap">
+            <div class="step-indicator active">
+              <div class="step step1 active">
+                <div class="step-icon"></div>
               </div>
-          </div>
-
-          <div class="step-wrap" style="background: rgba(255, 55, 0, 0.866);">
-            <ul class="step-list">
-              <li class="step done">
-                <div>
-                  <img src="./assets/img/ico-check.svg" alt>
-                </div>
-              </li>
-              <li class="step current">
-                <div><span></span></div>
-              </li>
-              <li class="step"></li>
-              <li class="step">
+              <!--~~~~~단계그룹~~~~~-->
+              <div class="indicator-line active"></div>
+              <div class="step step2 active">
+                <div class="step-icon"></div>
+              </div>
+              <!--~~~~~단계그룹~~~~~-->
+              <!--~~~~~단계그룹~~~~~-->
+              <div class="indicator-line active"></div>
+              <div class="step step3 active">
+                <div class="step-icon"></div>
+              </div>
+              <!--~~~~~단계그룹~~~~~-->
+              <!--~~~~~단계그룹~~~~~-->
+              <div class="indicator-line "></div>
+              <div class="step step4 ">
+                <div class="step-icon"></div>
+              </div>
+              <!--~~~~~단계그룹~~~~~-->
+              <!--~~~~~단계그룹~~~~~-->
+              <div class="indicator-line "></div>
+              <div class="step step5 ">
                 <img src="./assets/img/reward.png" alt>
-              </li>
-            </ul>
+              </div>
+              <!--~~~~~단계그룹~~~~~-->
+            </div>
           </div>
-        </section>
 
+        </section>
+        
         <section class="quiz-pane">
           <h3>
             <span class="q-num">Q1</span>
