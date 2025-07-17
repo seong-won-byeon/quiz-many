@@ -805,75 +805,173 @@ header button img {
     transform: translateX(-50%) translateY(100%);
   }
   
+  .hint-bubble-wrap {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+  .hint-bubble-tail {
+    position: absolute;
+    bottom: -4px;
+    right: 17px;
+    width: 16px;
+    height: 12px;
+    background: url('../img/fra-hint.png') no-repeat center / contain;
+    z-index: 1;
+  }
 
 
 
   /* 말풍선 */
-  .hint-bubble-wrap {
-    /* padding-bottom: 8px; */
-    margin-bottom: 2px;
-  }
   .hint-bubble {
+    overflow: hidden;
     position: relative;
     width: 92px;
+    height: 36px;
     background: #fff;
     outline: 1.5px solid #FF8000;
     border-radius: 24px;
     padding: 8px 12px;
-    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.18); 
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.18);
     outline-offset: -1.6px;
     overflow: hidden;
-    transition: width 0.2s ease-in-out, padding 0.2s ease-in-out;
+    transition:
+      width 0.25s ease-in-out,
+      height 0.25s ease-in-out,
+      padding 0.25s ease-in-out,
+      transform 0.25s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform-origin: right bottom;
   }
-  
-
+    /* 말풍선 애니메이션 */
+  /* 말풍선 열기 반동 */
+  @keyframes bubbleExpandBounce {
+    0%   { transform: scale(1); }
+    60%  { transform: scale(1.25); }
+    80%  { transform: scale(1.11); }
+    100% { transform: scale(1); } /* 최종 상태 */
+    }
+    
+    /* 말풍선 닫기 반동 */
+    @keyframes bubbleShrinkBounce {
+    0%   { transform: scale(1.06); }
+    40%  { transform: scale(0.9); }
+    80%  { transform: scale(1.02); }
+    100% { transform: scale(1); } /* 최종 상태 */
+    }
+  .hint-bubble.bounce-expand {
+    animation: bubbleExpandBounce 0.3s ease-in-out forwards;
+  }
+  .hint-bubble.bounce-shrink {
+    animation: bubbleShrinkBounce 0.3s ease-in-out forwards;
+  }
+  .hint-bubble.expanded {
+    width: 114px;
+    height: 114px;
+    padding: 14px;
+    transform: scale(1.06);
+  }
+  /* 텍스트 */
   .hint-bubble p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #FF8000;
     font-weight: var(--font-semibold);
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: -0.28px;
     margin: 0;
-    transition: opacity 0.2s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 2; /* 텍스트가 이미지 위에 뜨게 */
+    width: 100%;
+    padding: 8px 12px;
   }
-  
-  .hint-bubble p.hidden {
-    display: none;
+  #hintText {
+    opacity: 1;
+    transition: opacity 0.3s ease;
   }
-  
-  /* 이미지 카드 영역 */
+  #hintText.faded {
+    opacity: 0;
+  }
+
+
+
+  /* 이미지 카드 */
   .bubble-card {
     opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 100ms ease-in-out, height 100ms ease-in-out;
+    padding: 0;
+    height: 0;
     width: 0;
-    transition: opacity 0.3s ease, width 0.3s ease;
     overflow: hidden;
+    border: 1px solid #000;
   }
   .bubble-card.show {
-    width: 90px;
-    height: 90px;
-    padding: 5px;
     opacity: 1;
+    transform: scale(1);
+    padding: 5px;
+    height: auto;
+    width: auto;
   }
   .bubble-card img {
     width: 80px;
     height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
   }
-  
 
-  .hint-bubble.expanded {
-    width: auto;
-    width: 114px;
-    height: 114px;
-    padding: 12px;
+  /* + 버튼 애니메이션 */
+  /* + -> × (열림) */
+  @keyframes rotateToX {
+  0% {
+    transform: rotate(0deg);
   }
-  .bubble-card {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 100ms ease-in-out, height 100ms ease-in-out;
+  60% {
+    transform: rotate(55deg);
   }
-  
+  80% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+  }
+  /* × -> + (닫힘) */
+  @keyframes rotateToPlus {
+  0% {
+    transform: rotate(45deg); 
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(8deg); 
+  }
+  100% {
+    transform: rotate(0deg); 
+  }
+  }
+  .toggle-icon {
+    display: inline-block;
+  }
+  .toggle-icon.rotate-to-plus {
+    animation: rotateToPlus 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  }
+
+  .toggle-icon.rotate-to-x {
+    animation: rotateToX 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  }
+
+
+
+
+
 
