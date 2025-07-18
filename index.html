@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no;" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
   <title>퀴즈 리워드 페이지</title>
   <link rel="stylesheet" href="./assets/css/index.css"/>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -32,13 +32,12 @@
           <div class="pop-area">
               <div class="cont-box">
                   <strong class="tit">문의하기</strong>
-                  <!-- <a href="#"><img src="./assets/images/ico-close.png" class="btn-close" alt></a> -->
-                  <form action>
+                  <form>
                       <fieldset>
-                          <legend class="blind">이메일</legend>
+                          <label for="inquiryEmail" class="blind">이메일</label>
                           <p>이메일</p>
-                          <input type="email" placeholder="답변받으실 이메일 주소를 입력해 주세요." />
-                          <legend class="blind">문의내용</legend>
+                          <input type="email" placeholder="답변받으실 이메일 주소를 입력해 주세요." id="inquiryEmail"/>
+                          <label for="inquiryContent" class="blind">문의내용</label>
                           <p>문의내용</p>
                           <textarea id="inquiryContent" rows="6" cols="50" placeholder="*정확한 답변을 위해 상세 내용을 입력해 주세요.
 *문의 답변에는 영업일 기준 3~5일 정도 소요될 수 있습니다."></textarea>
@@ -53,7 +52,7 @@
       </div>
     </div>
 
-
+    <!-- 힌트보기 -->
     <div class="floating-container">
       <!-- 말풍선 전체 -->
       <div class="hint-bubble-wrap" id="hintBubble">
@@ -74,13 +73,12 @@
     
     <header>
       <button class="back-button" aria-label="뒤로가기">
-          <img src="./assets/img/ico-back.svg" alt="뒤로가기"/>
+        <img src="./assets/img/ico-back.svg" alt="뒤로가기"/>
       </button>
       <button class="help-button" aria-label="도움말">
-          <img src="./assets/img/ico-contact.svg" alt="도움말" />
+        <img src="./assets/img/ico-contact.svg" alt="도움말" />
       </button>
     </header>
-
 
     <main>
       <div class="p-20">
@@ -124,7 +122,6 @@
               <!--~~~~~단계그룹~~~~~-->
             </div>
           </div>
-
         </section>
         
         <section class="quiz-pane">
@@ -139,35 +136,35 @@
             <li>2.&nbsp;미션 스텝을 간단히 요약해주세요.미션 스텝을 간단히 요약해주세요.미션 스텝을 간단히 요약해주세요.</li>
           </ul>
           <div class="info-item keyword">
-            <img src="./assets/img/keyword.png" alt aria-hidden="true" />
+            <img src="./assets/img/keyword.png" alt/>
             <dl>
               <dt>키워드</dt>
               <dd>교대맛집 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 </dd>
             </dl>
           </div>
           <div class="info-item place">
-            <img src="./assets/img/place.png" alt aria-hidden="true" />
+            <img src="./assets/img/place.png" alt/>
             <dl>
               <dt>플레이스명</dt>
               <dd>자X랩 서X점</dd>
             </dl>
           </div>
           <div class="info-item store">
-            <img src="./assets/img/store.png" alt aria-hidden="true" />
+            <img src="./assets/img/store.png" alt/>
             <dl>
               <dt>스토어명</dt>
               <dd>교대맛집 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 2줄이상일때 </dd>
             </dl>
           </div>
           <div class="info-item product">
-            <img src="./assets/img/product.png" alt aria-hidden="true" />
+            <img src="./assets/img/product.png" alt/>
             <dl>
               <dt>상품명</dt>
               <dd>자X랩 서X점</dd>
             </dl>
           </div>
           <div class="info-item price">
-            <img src="./assets/img/price.png" alt aria-hidden="true" />
+            <img src="./assets/img/price.png" alt/>
             <dl>
               <dt>상품금액</dt>
               <dd>10,000원</dd>
@@ -183,7 +180,7 @@
         </section>
       </div>
 
-      <aside class="guide-box">
+      <div class="guide-box">
         <div class="p-20">
           <h4>퀴즈가 처음이라면?</h4>
           <p>문제별 가이드에 따라 차근차근 진행해 보세요!</p>
@@ -214,7 +211,7 @@
             <img src="./assets/img/guide-image.png" alt="상품품번 리워드 획득">
           </div>
         </div>
-      </aside>
+      </div>
     </main>
 
 
