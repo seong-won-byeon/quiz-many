@@ -791,19 +791,6 @@ header button img {
     transform: rotate(45deg);
   }
   
-  .cat-img {
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%) translateY(0);
-    width: 27px;
-    height: auto;
-    z-index: 1;
-    transition: transform 0.4s ease;
-  }
-  .cat-img.down {
-    transform: translateX(-50%) translateY(100%);
-  }
   
   .hint-bubble-wrap {
     position: relative;
@@ -893,34 +880,32 @@ header button img {
     width: 100%;
     padding: 8px 12px;
   }
-  #hintText {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-  #hintText.faded {
-    opacity: 0;
-  }
+  /* 텍스트 전환 */
+#hintText {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+#hintText.faded {
+  opacity: 0;
+}
 
-
-
-  /* 이미지 카드 */
-  .bubble-card {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 100ms ease-in-out, height 100ms ease-in-out;
-    padding: 0;
-    height: 0;
-    width: 0;
-    overflow: hidden;
-    border: 1px solid #000;
-  }
-  .bubble-card.show {
-    opacity: 1;
-    transform: scale(1);
-    padding: 5px;
-    height: auto;
-    width: auto;
-  }
+/* 이미지 카드 전환 */
+.bubble-card {
+  opacity: 0;
+  transform: scale(0.8);
+  padding: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.bubble-card.show {
+  opacity: 1;
+  transform: scale(1);
+  padding: 5px;
+  height: auto;
+  width: auto;
+}
   .bubble-card img {
     width: 80px;
     height: 80px;
